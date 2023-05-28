@@ -13,7 +13,7 @@ def display_board(board):
 
 
 def enter_move(board):
-    ok = False  # fake assumption - we need it to enter the loop
+    ok = False  # fake assumption - need it to enter the loop
     while not ok:
         move = input("Enter your move: ")
         ok = len(move) == 1 and move >= '1' and move <= '9'  # is user's input valid?
@@ -41,12 +41,12 @@ def make_list_of_free_fields(board):
 
 
 def victory_for(board, sgn):
-    if sgn == "X":  # are we looking for X?
+    if sgn == "X":  # looking for X?
         who = 'me'  # yes - it's computer's side
     elif sgn == "O":  # ... or for O?
-        who = 'you'  # yes - it's our side
+        who = 'you'  # yes - it's player side
     else:
-        who = None  # we should not fall here!
+        who = None  
     cross1 = cross2 = True  # for diagonals
     for rc in range(3):
         if board[rc][0] == sgn and board[rc][1] == sgn and board[rc][2] == sgn:  # check row rc
